@@ -50,7 +50,7 @@ export default function RootLayout() {
 
   return (
     <SafeAreaProvider>
-      <SafeAreaView style={styles.container}>
+      <SafeAreaView>
         <RootLayoutNav />
       </SafeAreaView>
     </SafeAreaProvider>
@@ -65,10 +65,11 @@ function RootLayoutNav() {
   return (
     <PaperProvider theme={theme}>
       <Stack>
-        <Stack.Screen name="(tabs)" options={options} />
         <Stack.Screen name="index" options={{ headerShown: false }} />
+        <Stack.Screen name="(tabs)" options={options} />
         <Stack.Screen name="(auth)/login" options={{ headerShown: false }} />
         <Stack.Screen name="(auth)/register" options={{ headerShown: false }} />
+        <Stack.Screen name="accountConfirmation" options={options} />
       </Stack>
     </PaperProvider>
   );
